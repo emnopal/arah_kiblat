@@ -8,7 +8,7 @@ from django import forms
 class ParseForm(forms.ModelForm):
     lokasi = forms.CharField(widget=forms.TextInput(
         attrs={"class": "form-control form-control-lg",
-               "placeholder": "Masukkan lokasi, jika berupa koordinat ikuti format seperti ini => 'xxxx, yyyy'"}
+               "placeholder": "Masukkan lokasi, jika berupa koordinat ikuti format seperti ini => 'lintang, bujur'"}
     ))
 
     class Meta:
