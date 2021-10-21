@@ -1,3 +1,5 @@
+import time
+
 from django.shortcuts import render
 from .models import Parse
 from django import forms
@@ -28,6 +30,7 @@ def home(request):
 
         # If URL is valid
         if used_form.is_valid():
+            time.sleep(2)
             obj = used_form.save()
             lokasi = obj.lokasi
             sudut = obj.sudut

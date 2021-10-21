@@ -12,6 +12,6 @@ class Parse(models.Model):
         ordering = ["-created"]
 
     def save(self, *args, **kwargs):
-        r = requests.get(f"http://127.0.0.1:8000/{self.lokasi}")
+        r = requests.get(f"https://arah-kiblat-api.herokuapp.com/{self.lokasi}")
         self.sudut = r.json()
         super().save(*args, **kwargs)
