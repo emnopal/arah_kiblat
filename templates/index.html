@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Arah Kiblat</title>
+
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+            crossorigin="anonymous"
+    />
+
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous"
+    />
+</head>
+<body>
+{% block body %}
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-header text-center py-3">
+                <h3>Arah Kiblat</h3>
+            </div>
+            <div class="px-3 py-4">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="row g-1">
+                        <div class="col-10">{{ form.lokasi }}</div>
+                        <div class="col-2">
+                            <button class="btn btn-success btn-lg w-100" type="submit">
+                                Generate Lokasi
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {% if sudut %}
+            <div class="mx-auto justify-content-center">
+                <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Lokasi</th>
+                        <th>Sudut (dalam derajat)</th>
+                    </tr>
+                    </thead>
+                <tbody>
+                    {% for key, value in sudut.items %}
+                        <tr>
+                            <td>{{ key }}</td>
+                            <td>{{ value }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        {% endif %}
+    </div>
+{% endblock body %}
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"
+></script>
+</body>
+</html>
