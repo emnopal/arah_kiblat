@@ -4,6 +4,7 @@ from django.db import models
 
 # Create your models here.
 class Parse(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
     lokasi = models.CharField(max_length=250)
     sudut = models.CharField(max_length=250)
 
