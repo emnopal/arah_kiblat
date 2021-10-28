@@ -36,6 +36,7 @@ def home(request):
             sudut = obj.sudut
             context['lokasi'] = lokasi
             context['sudut'] = sudut
+            context['form'] = ParseForm()
             return render(request, template, context)
 
         # Else
