@@ -4,8 +4,8 @@ Aplikasi untuk menentukan arah kiblat pada suatu lokasi berdasarkan algoritma ma
 
 ## API
 API yang digunakan disini adalah API yang berasal dari Nominatim ditambah dengan API buatan sendiri yang di host di Heroku. <br>
-Untuk API bisa dilihat di: https://github.com/emnopal/arah_kiblat_api
-Untuk RestAPI bisa lakukan requests ke: https://arah_kiblat_api.heroku.com/{nama_kota}
+Untuk API bisa dilihat di: https://github.com/emnopal/arah_kiblat_api <br>
+Untuk RestAPI bisa lakukan requests ke: https://arah_kiblat_api.heroku.com/{nama_kota} <br>
 
 # Web
 Repository ini sudah di deploy ke website, dengan host di Heroku.<br>
