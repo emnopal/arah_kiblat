@@ -19,6 +19,11 @@
 			integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
 			crossorigin="anonymous"
 		/>
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		{% block body %}
@@ -97,6 +102,12 @@
 		</div>
 		{% endblock body %}
 		<style>
+			* {
+				font-family: "Open Sans", sans-serif;
+			}
+			.form-control {
+				text-align: center;
+			}
 			@media (max-width: 576px) {
 				.responsive-content {
 					font-size: 2.5vw;
