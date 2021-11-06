@@ -11,21 +11,21 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
 			integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
 			crossorigin="anonymous" />
-
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
 			integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
 			crossorigin="anonymous" />
-
+		<link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
 	</head>
 
 	<body>
-		<nav class="responsive-content navbar navbar-expand-lg navbar-dark bg-transparent" style="margin: 20px;">
+		{% block body %}
+		<nav class="navbar navbar-fixed-top navbar-expand-sm responsive-content bg-transparent" style="margin: 15px;">
 			<div class="container">
 				<a class="navbar-brand" href="">
 					<span class="navbar-brand mb-0 h1" style="color: black;">
-						<img src="{% static "/img/logo/logos512.png" %}" width="30" height="30"
-							class="d-inline-block align-top" alt="logoss" style="margin-right:10px ;">
+						<img src="{% static "/img/logo/logos512.png" %}" width="25" height="25"
+							class="d-inline-block align-top" alt="logos" style="margin-right:1.5px ;">
 						Arah Kiblat
 					</span>
 				</a>
@@ -34,85 +34,87 @@
 					aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="navbar">
-					<div class="navbar-nav navbar-expand">
-						<a class="nav-link" style="color: black;" href="">Paper</a>
-						<a class="nav-link" style="color: black;" href="https://github.com/emnopal">Github</a>
-						<a class="nav-link" style="color: black;" href="">Penggunaan</a>
-						<a class="nav-link" style="color: black;" href="">API</a>
-						<a class="nav-link" style="color: black;" href="">Tentang</a>
-					</div>
+				<div class="collapse navbar-collapse">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link" style="color: black;" href="">Paper</a></li>
+						<li class="nav-item"><a class="nav-link" style="color: black;"
+								href="https://github.com/emnopal">Github</a></li>
+						<li class="nav-item"><a class="nav-link" style="color: black;" href="">Penggunaan</a></li>
+						<li class="nav-item"><a class="nav-link" style="color: black;" href="">API</a></li>
+						<li class="nav-item"><a class="nav-link" style="color: black;" href="">Tentang</a></li>
+					</ul>
 				</div>
-
 		</nav>
-
-		{% block body %}
-		
 		<div class="container">
 			<figure class="text-center">
 				<blockquote class="blockquote">
-				  <p style="font-size: 25px;">قَدْ نَرٰى تَقَلُّبَ وَجْهِكَ فِى السَّمَاۤءِۚ فَلَنُوَلِّيَنَّكَ قِبْلَةً تَرْضٰىهَا ۖ فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ ۗ وَحَيْثُ مَا كُنْتُمْ فَوَلُّوْا وُجُوْهَكُمْ شَطْرَهٗ</p>
-				  <p style="font-size: 15px;">Kami melihat wajahmu (Muhammad) sering menengadah ke langit, maka akan Kami palingkan engkau ke kiblat yang engkau senangi.<br> Maka hadapkanlah wajahmu ke arah Masjidilharam. Dan di mana saja engkau berada, hadapkanlah wajahmu ke arah itu.</p>
+					<p style="font-size: 25px;">قَدْ نَرٰى تَقَلُّبَ وَجْهِكَ فِى السَّمَاۤءِۚ فَلَنُوَلِّيَنَّكَ
+						قِبْلَةً تَرْضٰىهَا ۖ فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ ۗ وَحَيْثُ مَا كُنْتُمْ
+						فَوَلُّوْا وُجُوْهَكُمْ شَطْرَهٗ</p>
+					<p style="font-size: 15px;">Kami melihat wajahmu (Muhammad) sering menengadah ke langit, maka akan
+						Kami palingkan engkau ke kiblat yang engkau senangi.<br> Maka hadapkanlah wajahmu ke arah
+						Masjidilharam. Dan di mana saja engkau berada, hadapkanlah wajahmu ke arah itu.</p>
 				</blockquote><br>
 				<figcaption class="blockquote-footer">
-					<cite title="Source Title"><b>Qur'an</b> 2:144</cite>
+					<cite title="Source Title" style="color: #000000;"><b>Qur'an</b> 2:144</cite>
 				</figcaption>
-			  </figure>
-				<div class="px-3 py-4">
-					<form action="" method="POST">
-						{% csrf_token %}
-						<div class="row g-1">
-							<div class="col-10">{{ form.lokasi }}</div>
-							<div class="col-2">
-								<button class="
+			</figure>
+			<div class="form px-3 py-4">
+				<form action="" method="POST">
+					{% csrf_token %}
+					<div class="row justify-content-center g-1">
+						<div class="input w-50 col-10">{{ form.lokasi }}</div>
+						<div class="button-submit col-2">
+							<button class="
+										cst-btn
 										responsive-content
-										btn btn-success btn-lg
+										btn
 										w-100
+										btn-responsive
 										d-flex
-										justify-content-center
 										d-md-table
 										mx-auto
 									" type="submit">
-									Generate Lokasi
-								</button>
-								<script>
-									if (window.history.replaceState) {
-										window.history.replaceState(
-											null,
-											null,
-											window.location.href,
-										);
-									}
-								</script>
-							</div>
-						
-					</form>
-				</div>
+								<b>Generate Arah</b>
+							</button>
+							<script>
+								if (window.history.replaceState) {
+									window.history.replaceState(
+										null,
+										null,
+										window.location.href,
+									);
+								}
+							</script>
+						</div>
+				</form>
 			</div>
 			{% if sudut %}
-			<div class="mx-auto justify-content-center">
-				<table class="table table-responsive">
+			<div class="mx-auto justify-content-center" style="margin-top: 20px;">
+				<table class="table table-responsive table-striped table-hover table-bordered">
 					<thead>
 						<tr>
+							<th>No.</th>
 							<th>Lokasi</th>
-							<th>Latitude (Lintang)</th>
-							<th>Longitude (Bujur)</th>
-							<th>Sudut (dalam derajat)</th>
+							<th>Lintang</th>
+							<th>Bujur</th>
+							<th>Sudut</th>
 						</tr>
 					</thead>
 					<tbody>
 						{% for key, value in sudut.items %}
 						<tr>
+							<td>{{ forloop.counter }}</td>
 							<td>
 								{{ key }}
 								<a href="https://www.google.com/maps/@{{ value.1 }},{{ value.2 }},16z"
-									class="btn btn-primary btn-sm" target="_blank">
+									class="btn btn-maps btn-sm" target="_blank">
 									Buka di maps
 								</a>
 							</td>
-							<td>{{ value.1 }}</td>
-							<td>{{ value.2 }}</td>
-							<td>{{ value.0 }}</td>
+							<td>{{ value.1|floatformat:5 }}</td>
+							<td>{{ value.2|floatformat:5 }}</td>
+							<td>{{ value.0|floatformat:5 }}</td>
 						</tr>
 						{% endfor %}
 					</tbody>
@@ -120,11 +122,17 @@
 			</div>
 			{% endif %}
 		</div>
+		</div>
 		{% endblock body %}
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-			* {
+
+			body {
 				font-family: "Poppins", sans-serif;
+				padding-left: 10px;
+				padding-right: 10px;
+				background: #e0e0e0;
+				opacity: 0.8;
 			}
 
 			.form-control {
@@ -133,16 +141,80 @@
 
 			.navbar-brand {
 				font-size: 20px;
+				padding-bottom: 14px;
 			}
 
-			.navbar-nav {
+			.navbar-nav .navbar-link {
+				display: inline;
+				text-transform: uppercase;
 				font-size: 15px;
+				padding-bottom: 5px;
+				border-top: 4px;
+				border-bottom: 4px;
+				transition: 0.3s ease;
+				padding: 25px 5px;
 			}
 
-			@media (max-width: 576px) {
+			@media (max-width: 768px) {
 				.responsive-content {
 					font-size: 2.5vw;
 				}
+
+				.btn-responsive {
+					padding: 11px 11px;
+					font-size: 80%;
+					line-height: 1;
+				}
+			}
+
+			.navbar-dark .navbar-nav .active>.nav-link,
+			.navbar-dark .navbar-nav .nav-link.active,
+			.navbar-dark .navbar-nav .nav-link.show,
+			.navbar-dark .navbar-nav .show>.nav-link,
+			.navbar-dark .navbar-nav .nav-link:focus,
+			.navbar-dark .navbar-nav .nav-link:hover {
+				border-bottom: 4px solid #000000;
+			}
+
+			.nav-item::after {
+				content: '';
+				display: block;
+				width: 0px;
+				height: 4px;
+				background: #000000;
+				transition: 0.4s
+			}
+
+			.nav-item:hover::after {
+				width: 100%
+			}
+
+			.btn {
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -moz-box;
+				display: -ms-flexbox;
+				color: #fff;
+				background: -webkit-linear-gradient(45deg, #0f8349, #107081);
+				background: -o-linear-gradient(45deg, #0f8349, #107081);
+				background: -moz-linear-gradient(45deg, #0f8349, #107081);
+				background: linear-gradient(45deg, #0f8349, #107081);
+				transition: 0.5s;
+				opacity: 1;
+			}
+
+			.cst-btn {
+				height: 100%;
+			}
+
+			.btn:hover {
+				color: #fff;
+				transition: 0.5s;
+				opacity: 0.6;
+			}
+
+			.btn-maps {
+				width: fit-content;
 			}
 		</style>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
