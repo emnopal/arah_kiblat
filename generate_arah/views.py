@@ -1,6 +1,7 @@
 import time
 
 from django.shortcuts import render
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Parse
 from django import forms
 
@@ -32,10 +33,8 @@ def home(request):
         if used_form.is_valid():
             time.sleep(2)
             obj = used_form.save()
-            lokasi = obj.lokasi
-            sudut = obj.sudut
-            context['lokasi'] = lokasi
-            context['sudut'] = sudut
+            context['lokasi'] = obj.lokasi
+            context['sudut'] = obj.sudut
             context['form'] = ParseForm()
             return render(request, template, context)
 
