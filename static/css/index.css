@@ -2,8 +2,8 @@
 
 body {
 	font-family: "Poppins", sans-serif;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
 	background: #e0e0e0;
 	opacity: 1;
 }
@@ -68,6 +68,7 @@ body {
 	height: 100%;
 	width: -moz-fit-content;
 	width: fit-content;
+	font-size: larger;
 }
 
 .btn:hover {
@@ -81,9 +82,24 @@ body {
 	width: fit-content;
 }
 
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: -webkit-linear-gradient(45deg, #0f8349, #107081);
+	background: -o-linear-gradient(45deg, #0f8349, #107081);
+	background: -moz-linear-gradient(45deg, #0f8349, #107081);
+	background: linear-gradient(45deg, #0f8349, #107081);
+	color: white;
+	text-align: center;
+	font-size: smaller;
+}
+
 @media (max-width: 1080px) {
 	.btn {
-		height: 100%;
+		height: fit-content;
+		height: -moz-fit-content;
 		width: -moz-fit-content;
 		width: fit-content;
 		font-size: 100%;
@@ -92,6 +108,7 @@ body {
 
 	.cst-btn {
 		height: 100%;
+		font-size: smaller;
 	}
 
 	.btn-maps {

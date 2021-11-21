@@ -23,33 +23,32 @@
         <script src="{% static 'js/index.js' %}"></script>
     </head>
 
+    <nav class="navbar navbar=default navbar-expand-sm responsive-content bg-transparent" style="margin-top: 15px;">
+        <div class="container navbar-header">
+            <a class="navbar-brand" href="" style="font-size: 20px; padding-bottom: 14px;">
+                <span class="navbar-brand mb-0 h1" style="color: black;">
+                    <img src="{% static "/img/logo/logos512.png" %}" width="25" height="25"
+                        class="d-inline-block align-top" alt="logos" style="margin-right:1.5px;">
+                    Arah Kiblat
+                </span>
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                data-target=".navbar-collapse" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-expand-sm">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item"><a class="nav-link" style="color: black;" href="">Paper</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color: black;" href="https://github.com/emnopal/arah_kiblat">Github</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color: black;" href="https://emnopal.github.io/arah_kiblat/">Dokumentasi</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color: black;" href="https://arah-kiblat-api.herokuapp.com/docs">API</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <body>
         {% block body %}
-        <nav class="navbar navbar=default navbar-expand-sm responsive-content bg-transparent" style="margin-top: 15px;">
-            <div class="container navbar-header">
-                <a class="navbar-brand" href="" style="font-size: 20px; padding-bottom: 14px;">
-                    <span class="navbar-brand mb-0 h1" style="color: black;">
-                        <img src="{% static "/img/logo/logos512.png" %}" width="25" height="25"
-                            class="d-inline-block align-top" alt="logos" style="margin-right:1.5px;">
-                        Arah Kiblat
-                    </span>
-                </a>
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
-                    data-target=".navbar-collapse" aria-expanded="false">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse navbar-expand-sm">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a class="nav-link" style="color: black;" href="">Paper</a></li>
-                        <li class="nav-item"><a class="nav-link" style="color: black;"
-                                href="https://github.com/emnopal">Github</a></li>
-                        <li class="nav-item"><a class="nav-link" style="color: black;" href="">Dokumentasi</a></li>
-                        <li class="nav-item"><a class="nav-link" style="color: black;" href="">API</a></li>
-                        <li class="nav-item"><a class="nav-link" style="color: black;" href="">Tentang</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
         <div class="container">
             <div class="form" style="border-radius: 25px;
                 padding: 15px;
@@ -62,7 +61,7 @@
                     <div class="row justify-content-center g-1">
                         <div class="input w-50 col-10">{{ form.lokasi }}</div>
                         <div class="col-2">
-                            <button class="cst-btn btn w-100 d-md-table" type="submit" style="font-size: larger;">
+                            <button class="cst-btn btn w-100 d-md-table" type="submit">
                                 Generate Arah
                             </button>
                         </div>
@@ -100,14 +99,17 @@
                             {% endfor %}
                         </tbody>
                     </table>
-                    <!--Starts Here-->
-                        <!--Ends Here-->
                 </div>
             </div>
             {% endif %}
+            <br>
         </div>
         </div>
         {% endblock body %}
     </body>
+
+    <div class="footer">
+        <p>Arah-Kiblat Versi 1.0 ©2021 by Muhammad Naufal and Rangga Prasetya Alamsyah</p>
+    </div>
 
 </html>
