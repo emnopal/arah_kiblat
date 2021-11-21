@@ -133,7 +133,3 @@ dmypy.json
 
 # documentation
 documentation/
-
-# This is for local development only, for temporary files
-# because if i put static files outside generate_arah the static files won't load
-generate_arah/static/
