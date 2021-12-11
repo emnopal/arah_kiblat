@@ -9,11 +9,15 @@ Untuk RestAPI bisa lakukan HTTP GET ke: <br>
 `curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://arah-kiblat-api.herokuapp.com/{nama_kota}` <br>
 atau HTTP POST dengan mengirim JSON ke: <br>
 `curl -X POST -H "Content-Type: application/json" \
-    -d '{"latitude": "enter latitude (optional jika anda memberikan nilai ke latlong atau lokasi)", 
-         "longitude": "enter longitude (optional jika anda memberikan nilai ke latlong atau lokasi)",
-         "latlong":  "enter latlong (optional jika anda memberikan nilai ke latitude, longitude atau lokasi)",
-         "lokasi":  "enter lokasi (optional jika anda memberikan nilai ke latitude, longitude atau latlong)"}' \
+    -d '{input json disini}' \
     https://arah-kiblat-api.herokuapp.com` <br>
+
+Parameter apa saja yang akan diterima di metode POST?:<br>
+    1. "latitude": "enter latitude (optional jika anda memberikan nilai ke latlong atau lokasi)" <br>
+    2. "longitude": "enter longitude (optional jika anda memberikan nilai ke latlong atau lokasi)", <br>
+    3. "latlong":  "enter latlong (optional jika anda memberikan nilai ke latitude, longitude atau lokasi)", <br>
+    4. "lokasi":  "enter lokasi (optional jika anda memberikan nilai ke latitude, longitude atau latlong)" <br>
+    
 untuk lebih jelasnya, lihat dokumentasi API disini: https://arah-kiblat-api.herokuapp.com/docs<br>
 
 # Web
