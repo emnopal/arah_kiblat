@@ -7,6 +7,14 @@ API yang digunakan disini adalah API yang berasal dari Nominatim ditambah dengan
 Untuk API bisa dilihat di: https://github.com/emnopal/arah_kiblat_api <br>
 Untuk RestAPI bisa lakukan HTTP GET ke: <br>
 `curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://arah-kiblat-api.herokuapp.com/{nama_kota}` <br>
+atau HTTP POST dengan mengirim JSON ke: <br>
+`curl -X POST -H "Content-Type: application/json" \
+    -d '{"latitude": "enter latitude (optional jika anda memberikan nilai ke latlong atau lokasi)", 
+         "longitude": "enter longitude (optional jika anda memberikan nilai ke latlong atau lokasi)",
+         "latlong":  "enter latlong (optional jika anda memberikan nilai ke latitude, longitude atau lokasi)",
+         "lokasi":  "enter lokasi (optional jika anda memberikan nilai ke latitude, longitude atau latlong)"}' \
+    https://arah-kiblat-api.herokuapp.com` <br>
+untuk lebih jelasnya, lihat dokumentasi API disini: https://arah-kiblat-api.herokuapp.com/docs<br>
 
 # Web
 Repository ini sudah di deploy ke website, dengan host di Heroku.<br>
